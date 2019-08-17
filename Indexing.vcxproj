@@ -123,6 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DocxFileManager.cpp" />
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="Report.cpp" />
+    <ClCompile Include="SearchBar.cpp" />
+    <ClCompile Include="SearchEngine.cpp" />
+    <ClCompile Include="TxtFileManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DocxFileManager.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="Report.h" />
+    <ClInclude Include="SearchBar.h" />
+    <ClInclude Include="SearchEngine.h" />
+    <ClInclude Include="TxtFileManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
