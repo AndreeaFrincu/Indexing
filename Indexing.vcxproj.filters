@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="TXT multiple lines">
+      <UniqueIdentifier>{485193c0-7a1f-44c3-9e7f-7a18fe4d22ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TXT single lines">
+      <UniqueIdentifier>{83202a97-ab70-4ea0-91e1-fbc3283235a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileManager.cpp">
@@ -59,6 +65,22 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="cfgFile.txt" />
+    <Text Include="D:\ATM stuff\2nd year\Arhitecturi\arhitecturi\arhi\Codes\Index.txt" />
+    <Text Include="D:\TXT multiple lines\1.txt">
+      <Filter>TXT multiple lines</Filter>
+    </Text>
+    <Text Include="D:\TXT multiple lines\2.txt">
+      <Filter>TXT multiple lines</Filter>
+    </Text>
+    <Text Include="D:\TXT single lines\1.1.txt">
+      <Filter>TXT single lines</Filter>
+    </Text>
+    <Text Include="D:\TXT single lines\2.1.txt">
+      <Filter>TXT single lines</Filter>
+    </Text>
+    <Text Include="D:\TXT single lines\3.1.txt">
+      <Filter>TXT single lines</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

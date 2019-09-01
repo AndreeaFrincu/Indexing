@@ -5,6 +5,7 @@ class TxtFileManager :
 {
 public:
 	void openCfgFile();
+	void searchList();
 	void closeCfgFile();
 	list<string> getListOfFiles();
 	void upload();

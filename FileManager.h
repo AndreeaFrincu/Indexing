@@ -1,9 +1,9 @@
 #pragma once
+#include <filesystem>
 #include <iostream>
 #include <list>
 #include <string>
 #include <fstream>
-#include <filesystem>
 
 namespace fs = std::filesystem;
 using namespace std;
@@ -19,5 +19,6 @@ public:
 
 	string rootFile;
 	fstream cfgFilePointer;
+	//fstream srcFilePointer;
 };
 

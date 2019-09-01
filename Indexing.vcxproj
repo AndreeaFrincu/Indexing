@@ -87,6 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="cfgFile.txt" />
+    <Text Include="D:\ATM stuff\2nd year\Arhitecturi\arhitecturi\arhi\Codes\Index.txt" />
+    <Text Include="D:\TXT multiple lines\1.txt" />
+    <Text Include="D:\TXT multiple lines\2.txt" />
+    <Text Include="D:\TXT single lines\1.1.txt" />
+    <Text Include="D:\TXT single lines\2.1.txt" />
+    <Text Include="D:\TXT single lines\3.1.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
