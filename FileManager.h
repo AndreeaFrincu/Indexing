@@ -1,8 +1,11 @@
 #pragma once
+#include <iostream>
 #include <list>
 #include <string>
 #include <fstream>
+#include <filesystem>
 
+namespace fs = std::filesystem;
 using namespace std;
 
 class FileManager
@@ -13,7 +16,7 @@ public:
 	virtual list<string> getListOfFiles() = 0;
 	virtual void upload() = 0;
 	virtual void download() = 0;
-private:
+
 	string rootFile;
 	fstream cfgFilePointer;
 };

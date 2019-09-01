@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="DocxFileManager.cpp" />
     <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Report.cpp" />
     <ClCompile Include="SearchBar.cpp" />
     <ClCompile Include="SearchEngine.cpp" />
@@ -138,7 +139,20 @@
     <ClInclude Include="SearchEngine.h" />
     <ClInclude Include="TxtFileManager.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="cfgFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets" Condition="Exists('packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets'))" />
+  </Target>
 </Project>
