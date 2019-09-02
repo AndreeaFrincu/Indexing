@@ -2,8 +2,15 @@
 #include <filesystem>
 #include <iostream>
 #include <list>
+#include <map>
+#include <vector>
+#include <iterator>
 #include <string>
 #include <fstream>
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+#include <ctype.h>
 
 namespace fs = std::filesystem;
 using namespace std;

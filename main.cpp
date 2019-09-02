@@ -8,8 +8,8 @@ int main()
 {
 	TxtFileManager txt;
 	txt.openCfgFile();
-	int size = txt.getListOfFiles().size();
-	cout << size << endl;
 	txt.searchList();
+	txt.foundDensity();
+	txt.bestRanking();
 	txt.closeCfgFile();
 }
