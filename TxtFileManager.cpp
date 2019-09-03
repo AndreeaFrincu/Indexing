@@ -34,11 +34,9 @@ void TxtFileManager::openCfgFile()
 
 void TxtFileManager::searchList()
 {
-	fstream hstFilePointer;
 	fstream srcFilePointer;
 	string search;
 	string line;//linie din fisierul in care caut
-	string line1;//linie din fisierul de istoric
 	int nrCuv = 0;
 	bool found1 = false;
 
@@ -58,7 +56,6 @@ void TxtFileManager::searchList()
 		}
 
 		size_t pos;
-		size_t pos1;
 		while (srcFilePointer.good())
 		{
 			getline(srcFilePointer, line); // get line from file
@@ -71,19 +68,11 @@ void TxtFileManager::searchList()
 				nrCuv++;
 				//cout << "fisierul in care a fost gasit cuvantul este: " << file << endl;
 				foundList.push_back(file);
-				hstFilePointer.open("history.txt", std::ios::app);
-				getline(hstFilePointer, line1); //get line from history
-				pos1 = line1.find(search);
-				//string search2 = search;
-				if (pos1 != string::npos)
+				bool found2 = (find(listForHistory.begin(), listForHistory.end(), search) != listForHistory.end());
+				if (found2 == 0)
 				{
-					break;
+					listForHistory.push_back(search);
 				}
-				else
-				{
-					hstFilePointer << search << endl;
-				}
-				hstFilePointer.close();
 			}
 				//break;
 			
@@ -131,7 +120,12 @@ void TxtFileManager::closeCfgFile()
 
 list<string> TxtFileManager::getListOfFiles()
 {
-	return listOfFiles;
+	return this->listOfFiles;
+}
+
+list<string> TxtFileManager::getListForHistory()
+{
+	return this->listForHistory;
 }
 
 void TxtFileManager::foundDensity()

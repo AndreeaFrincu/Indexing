@@ -8,6 +8,7 @@ public:
 	void searchList();
 	void closeCfgFile();
 	list<string> getListOfFiles();
+	list<string> getListForHistory();
 	void foundDensity();
 	void bestRanking();
 	void upload();
@@ -20,5 +21,6 @@ private:
 	list<string> listOfFiles; //toate fisierele gasitein folderele din fisierul de configurare
 	list<string> foundList; //toate fisierele in care am gasit cuvantul cautat
 	map<int, int> foundKeyWords; //numarul de cuvinte gasite in fisier si numarul de cuvinte totale din fisier
+	list<string> listForHistory;
 };
 

@@ -1,9 +1,5 @@
 #pragma once
-#include <list>
-#include <string>
-#include <fstream>
-#include <iostream>
-
+#include "TxtFileManager.h"
 using namespace std;
 
 class SearchBar
@@ -11,12 +7,13 @@ class SearchBar
 public:
 	void openHistoryFile();
 	void closeHistoryFile();
-	list<string> getKeyWords();
+	void setKeyWords(const list<string>& keyWords);
 	void writeKeyWordsToHistory();
 	void autocompleteFromHistory(const string & partialKeyWord);
 private:
 	list<string> keyWords;
 	string historyFile;
-	fstream historyFilePointer;
+	ofstream historyFilePointerW;
+	ifstream historyFilePointerR;
 };
 

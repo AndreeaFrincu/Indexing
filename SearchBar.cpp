@@ -3,9 +3,10 @@
 void SearchBar::openHistoryFile()
 {
 	historyFile = "history.txt";
-	historyFilePointer.open(historyFile);
+	historyFilePointerR.open(historyFile);
+	historyFilePointerW.open(historyFile, ios::app);
 
-	if (!historyFilePointer)
+	if (!historyFilePointerR)
 	{
 		cout << "Unable to open file" << endl;
 		exit(1);
@@ -14,10 +15,33 @@ void SearchBar::openHistoryFile()
 
 void SearchBar::closeHistoryFile()
 {
-	historyFilePointer.close();
+	historyFilePointerR.close();
+	historyFilePointerW.close();
 }
 
-list<string> SearchBar::getKeyWords()
+void SearchBar::setKeyWords(const list<string>& keyWords)
 {
-	return list<string>();
+	this->keyWords = keyWords;
+}
+
+void SearchBar::writeKeyWordsToHistory()
+{
+	string line;
+	size_t pos;
+
+	openHistoryFile();
+	getline(historyFilePointerR, line);
+	for (auto word : keyWords)
+	{
+		pos = line.find(word);
+		if (pos != string::npos)
+		{
+			break;
+		}
+		else 
+		{
+			historyFilePointerW << word << endl;
+		}
+	}
+	closeHistoryFile();
 }
