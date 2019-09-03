@@ -3,16 +3,19 @@
 #include <list>
 #include <string>
 #include <conio.h>
+#include "SearchEngine.h"
 
 int main()
 {
 	TxtFileManager txt;
 	SearchBar bar;
+	SearchEngine* Engine = SearchEngine::getInstance();	
+	string str;
+
 	txt.openCfgFile();
-	txt.searchList();
-	bar.setKeyWords(txt.getListForHistory());
+	Engine->showReport(Engine->searchByContent(txt.getListOfFiles(), str));
+	bar.setKeyWords(Engine->getListForHistory());
 	bar.writeKeyWordsToHistory();
-	txt.foundDensity();
-	txt.bestRanking();
+	//Engine->bestRanking();
 	txt.closeCfgFile();
 }

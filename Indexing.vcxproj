@@ -87,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,11 +150,17 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets" Condition="Exists('packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets')" />
+    <Import Project="packages\QtCharts.redist.5.7.0\build\native\QtCharts.redist.targets" Condition="Exists('packages\QtCharts.redist.5.7.0\build\native\QtCharts.redist.targets')" />
+    <Import Project="packages\QtCharts.5.7.0\build\native\QtCharts.targets" Condition="Exists('packages\QtCharts.5.7.0\build\native\QtCharts.targets')" />
+    <Import Project="packages\Aspose.Words.Cpp.19.8.1\build\native\aspose.words.cpp.targets" Condition="Exists('packages\Aspose.Words.Cpp.19.8.1\build\native\aspose.words.cpp.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_filesystem-vc142.1.70.0.0\build\boost_filesystem-vc142.targets'))" />
+    <Error Condition="!Exists('packages\QtCharts.redist.5.7.0\build\native\QtCharts.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\QtCharts.redist.5.7.0\build\native\QtCharts.redist.targets'))" />
+    <Error Condition="!Exists('packages\QtCharts.5.7.0\build\native\QtCharts.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\QtCharts.5.7.0\build\native\QtCharts.targets'))" />
+    <Error Condition="!Exists('packages\Aspose.Words.Cpp.19.8.1\build\native\aspose.words.cpp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Aspose.Words.Cpp.19.8.1\build\native\aspose.words.cpp.targets'))" />
   </Target>
 </Project>
